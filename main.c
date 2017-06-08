@@ -14,11 +14,20 @@ int main() {
 
 	int difficulty = getDifficulty();
 	if (difficulty == -1) {
+        printf("Exiting...\n");
 		return 0;
 	}
 
 	SPFiarGame* game; 
 	game = spFiarGameCreate(HISTORY_SIZE);
 
-	return mainLoop(game, difficulty);
+    if (game == NULL) {
+        printf("Error: malloc has failed\n");
+        return 1;
+    }
+	int ec = mainLoop(game, difficulty);
+    
+    printf("Exiting...\n");
+    spFiarGameDestroy(game);
+    return ec;
 }

@@ -65,42 +65,6 @@ SPCommand spParserPraseLine(const char* str) {
     return cmd;
 }
 
-/*
-SPCommand* spParserPraseLine(char* str) {
-    SPCommand* cmd = (SPCommand *)malloc(sizeof(SPCommand));
-    char* token;
-    SP_COMMAND cmd_type;
-
-    if (*str == '\n') {
-        cmd_type = SP_INVALID_LINE;    
-    } else {
-        token = strtok(str,SPLIT_TOKEN);
-        cmd_type = spParserGetCommand(token);
-    }
-
-    cmd->cmd = cmd_type;
-    cmd->validArg = 0;
-
-    if (cmd_type == SP_ADD_DISC) {
-        token = strtok(NULL, SPLIT_TOKEN);
-        if (token == NULL) {
-            cmd->cmd = SP_INVALID_LINE;
-            return cmd;
-        }
-        if (spParserIsInt(token)) {
-            cmd->validArg = 1;
-            cmd->arg = atoi(token);
-        }
-    }
-
-    if (strtok(NULL, SPLIT_TOKEN) != NULL) {
-        cmd->cmd = SP_INVALID_LINE;
-        cmd->validArg = 0;
-    }
-
-    return cmd;
-}*/
-
 SP_COMMAND spParserGetCommand(const char* str) {
     if (strcmp(str, SP_UNDO_MOVE_COMMAND) == 0) {
         return SP_UNDO_MOVE;

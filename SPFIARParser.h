@@ -8,7 +8,7 @@
 #define SP_SUGGEST_MOVE_COMMAND ("suggest_move")
 #define SP_ADD_DISC_COMMAND ("add_disc")
 #define SP_QUIT_COMMAND ("quit")
-#define SP_RESTART_COMMAND ("restart")
+#define SP_RESTART_COMMAND ("restart_game")
 
 //a type used to represent a command
 typedef enum {
